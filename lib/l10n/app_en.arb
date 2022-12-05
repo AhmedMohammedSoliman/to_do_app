@@ -1,0 +1,17 @@
+{
+"to_do_list" : "To Do List " ,
+"add_your_task" : "Add your task" ,
+"enter_task_title" : "Enter task title" ,
+"enter_task_descreption" : "Enter task descreption" ,
+"add" : "Add" ,
+"select_time" : "Select time" ,
+"language" : "Language" ,
+"mode" : "Mode" ,
+"english" : "English" ,
+"arabic" : "Arabic" ,
+"light" : "Light" ,
+"dark" : "Dark" ,
+"play_basket_ball" : "Play basket ball" ,
+"time" : "Time"
+
+}
