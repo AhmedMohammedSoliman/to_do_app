@@ -12,6 +12,10 @@
 "light" : "Light" ,
 "dark" : "Dark" ,
 "play_basket_ball" : "Play basket ball" ,
-"time" : "Time"
+"time" : "Time" ,
+"delete" : "Delate" ,
+"settings" : "Settings" ,
+"save_changes" : "Save changes"
+
 
 }

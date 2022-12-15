@@ -17,7 +17,7 @@ class Home_Screen extends StatefulWidget{
 
 class _Home_ScreenState extends State<Home_Screen> {
   int selectedIndex = 0 ;
-
+  String title = "To Do List " ;
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<MyAppProvider>(context);
@@ -42,7 +42,7 @@ class _Home_ScreenState extends State<Home_Screen> {
       appBar: AppBar(
         backgroundColor: provider.appMode == ThemeMode.light ?
         MyTheme.blueLightColor : Color(0xFF6DA4E8),
-        title: Text(AppLocalizations.of(context)!.to_do_list , style: TextStyle(
+        title: Text("$title", style: TextStyle(
             color: Colors.white , fontSize: 22 , fontWeight: FontWeight.bold)),
       ) ,
       bottomNavigationBar:ClipRRect(
@@ -57,6 +57,12 @@ class _Home_ScreenState extends State<Home_Screen> {
             currentIndex: selectedIndex,
             onTap: (index){
               selectedIndex = index ;
+              switch(index) {
+                case 0 : {title = AppLocalizations.of(context)!.to_do_list ;}
+                  break ;
+                case 1 : {title = AppLocalizations.of(context)!.settings ;}
+                  break ;
+              }
               setState((){});
             },
             items: [

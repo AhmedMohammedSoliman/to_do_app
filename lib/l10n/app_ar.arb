@@ -12,6 +12,9 @@
 "light" : "مضىء" ,
 "dark" : "ليلى" ,
 "play_basket_ball" : "لعب كرة سله" ,
-"time" : "الوقت"
+"time" : "الوقت" ,
+"delete" : "حذف" ,
+"settings" : "الاعدادات" ,
+"save_changes" : "حفظ التغييرات"
 
 }
