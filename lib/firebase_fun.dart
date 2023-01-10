@@ -20,12 +20,6 @@ Future<void> deleteTaskFromFireBase (Task task){
 
 }
 
-Future<void>isDoneTask (Task task) async {
-  return getCollectionFromFirebase().doc(task.id).update({
-    "isDone" : true
-  }
-  );
-}
 
 
 

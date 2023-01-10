@@ -22,7 +22,7 @@ class _ListsTabState extends State<ListsTab> {
 
   @override
   Widget build(BuildContext context) {
-    getCollectionFromFirebase();
+    getTasksFromFireBase ();
     var provider = Provider.of<MyAppProvider>(context);
     return Container(
       child: Column(
@@ -42,7 +42,6 @@ class _ListsTabState extends State<ListsTab> {
             activeDayColor: MyTheme.blueLightColor,
             activeBackgroundDayColor: Colors.white,
             dotsColor: MyTheme.blueLightColor,
-            selectableDayPredicate: (date) => true,
             locale: 'en_ISO',
           ) ,
           SizedBox(height: 20,),
@@ -65,7 +64,7 @@ class _ListsTabState extends State<ListsTab> {
     taskList =  collection.docs.map((doc) => doc.data()).toList();
     setState((){
       taskList = taskList.where((task) {
-        DateTime dateTime = DateTime.fromMicrosecondsSinceEpoch(task.date);
+        DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(task.date);
         if (selectedDate.year == dateTime.year && selectedDate.month == dateTime.month &&
             selectedDate.day == dateTime.day){
           return true ;
@@ -74,14 +73,14 @@ class _ListsTabState extends State<ListsTab> {
       }).toList();
 
       taskList.sort((Task task1 , Task task2){
-        DateTime datetime1 = DateTime.fromMicrosecondsSinceEpoch(task1.date);
-        DateTime datetime2 = DateTime.fromMicrosecondsSinceEpoch(task2.date);
-        return datetime1.compareTo(datetime2);
+        return task1.date.compareTo(task2.date);
       });
     });
 
   }
 
- }
+}
+
+
 
 

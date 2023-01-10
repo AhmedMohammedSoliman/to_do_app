@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do_app/collectionClass/task.dart';
 import 'package:to_do_app/firebase_fun.dart';
@@ -122,7 +121,7 @@ class _ShowAddBottomSheetState extends State<ShowAddBottomSheet> {
     Task task = Task(
         title: title,
         description: description,
-        date: selectedDate.microsecondsSinceEpoch) ;
+        date: selectedDate.millisecondsSinceEpoch) ;
    if (form1Key.currentState!.validate() == true && form2Key.currentState!.validate() == true){
   addTaskToFirebase(task).timeout(Duration(milliseconds: 400) , onTimeout: (){
     Navigator.pop(context);

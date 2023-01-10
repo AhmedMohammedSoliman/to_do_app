@@ -129,6 +129,18 @@ class _UpdateScreenState extends State<UpdateScreen> {
                   updateTask(args["task"]).timeout(
                       Duration(milliseconds: 300), onTimeout: () {
                     Navigator.pop(context);
+                    showDialog(
+                      context: context,
+                      builder: (context)=> AlertDialog(
+                        content: ListTile(
+                          leading: Text("Update!" , style: TextStyle(color: Colors.blue , fontSize: 30)),
+                          trailing: Icon(Icons.done_all_outlined , color: Colors.blue,size: 30,),
+                        ),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)
+                        ),
+                      ),
+                    );
                   });
                 }
               },

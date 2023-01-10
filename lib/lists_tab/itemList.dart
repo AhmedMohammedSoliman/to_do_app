@@ -131,4 +131,11 @@ class _ItemListState extends State<ItemList> {
       ),
     );
   }
+  Future<void> isDoneTask (Task task){
+    return getCollectionFromFirebase().doc(task.id).update({
+      "title" : task.title ,
+      "description" : task.description
+    });
+
+  }
 }

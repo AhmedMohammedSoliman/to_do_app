@@ -32,7 +32,7 @@ late MyAppProvider provider;
   @override
   Widget build(BuildContext context) {
      provider = Provider.of<MyAppProvider>(context);
-    getPrefs();
+     getPrefs();
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
